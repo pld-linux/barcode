@@ -1,7 +1,8 @@
 Summary:	GNU barcode
+Summary(pl):	GNU barcode - narzêdzie do kodów paskowych
 Name:		barcode
 Version:	0.98
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ar.linux.it/pub/barcode/%{name}-%{version}.tar.gz
@@ -19,8 +20,17 @@ EAN-8, ISBN, as well as a few other formats. Ouput is generated as
 either Postscript or Encapsulated Postscript (other back-ends may be
 added if needed).
 
+%description -l pl
+To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiæ wiêkszo¶æ
+potrzeb zwi±zanych z drukowaniem kodów paskowych na konwencjonalnej
+drukarce. Mo¿e tworzyæ wydruki kodów w standardach: UPC-A, UPC-E,
+EAN-13, EAN-8, ISBN, a tak¿e kilku innych. Dane wyj¶ciowe s±
+generowane w formacie Postscript lub Encapsulated Postscript (w razie
+potrzeby mog± byæ dodane inne backendy).
+
 %package devel
 Summary:	GNU barcode files for development
+Summary(pl):	Pliki do programowania z u¿yciem GNU barcode
 Group:		Development/Libraries
 
 %description devel
@@ -31,8 +41,19 @@ EAN-8, ISBN, as well as a few other formats. Ouput is generated as
 either Postscript or Encapsulated Postscript (other back-ends may be
 added if needed).
 
-This package contain the C header, the static library and man page for
-development.
+This subpackage contain the C header, the static library and man page
+for developing programs that use GNU barcode.
+
+%description devel -l pl
+To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiæ wiêkszo¶æ
+potrzeb zwi±zanych z drukowaniem kodów paskowych na konwencjonalnej
+drukarce. Mo¿e tworzyæ wydruki kodów w standardach: UPC-A, UPC-E,
+EAN-13, EAN-8, ISBN, a tak¿e kilku innych. Dane wyj¶ciowe s±
+generowane w formacie Postscript lub Encapsulated Postscript (w razie
+potrzeby mog± byæ dodane inne backendy).
+
+Ten podpakiet zawiera plik nag³ówkowy do C, statyczn± bibliotekê oraz
+stronê manuala do tworzenia programów u¿ywaj±cych GNU barcode.
 
 %prep
 %setup -q
@@ -40,7 +61,7 @@ development.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
@@ -52,6 +73,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
