@@ -1,0 +1,58 @@
+--- barcode-0.98/Makefile.in~	Tue Aug  6 05:07:39 2002
++++ barcode-0.98/Makefile.in	Tue Aug  6 05:07:39 2002
+@@ -11,12 +11,11 @@
+ LDFLAGS = -L. -l$(TARGET) @LIBPAPER@
+ 
+ prefix = @prefix@
+-BINDIR = $(prefix)/bin
+-LIBDIR = $(prefix)/lib
+-INCDIR = $(prefix)/include
+-MAN1DIR = $(prefix)/man/man1
+-MAN3DIR = $(prefix)/man/man3
+-INFODIR = $(prefix)/info
++bindir = @bindir@
++libdir = @libdir@
++includedir = @includedir@
++mandir = @mandir@
++infodir = @infodir@
+ 
+ # getopt may be installed or not, if not take our copy
+ GETOPT_O = @GETOPT_O@
+@@ -63,22 +62,23 @@
+ 	cd doc && $(MAKE) 
+ 
+ install:
+-	$(INSTALL) -d $(BINDIR) $(INCDIR) $(LIBDIR) $(MAN1DIR) \
+-		$(MAN3DIR) $(INFODIR)
+-	$(INSTALL) -c $(TARGET) $(BINDIR)
+-	$(INSTALL) -c -m 0644 $(HEADER) $(INCDIR)
+-	$(INSTALL) -c -m 0644  $(LIBRARY) $(LIBDIR)
+-	$(INSTALL) -c -m 0644  $(MAN1) $(MAN1DIR)
+-	$(INSTALL) -c -m 0644  $(MAN3) $(MAN3DIR)
+-	$(INSTALL) -c -m 0644  $(INFO) $(INFODIR)
++	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(includedir) \
++		$(DESTDIR)$(libdir) $(DESTDIR)$(mandir)/man1 \
++		$(DESTDIR)$(mandir)/man3 $(DESTDIR)$(infodir)
++	$(INSTALL) -c $(TARGET) $(DESTDIR)$(bindir)
++	$(INSTALL) -c -m 0644 $(HEADER) $(DESTDIR)$(includedir)
++	$(INSTALL) -c -m 0644  $(LIBRARY) $(DESTDIR)$(libdir)
++	$(INSTALL) -c -m 0644  $(MAN1) $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -c -m 0644  $(MAN3) $(DESTDIR)$(mandir)/man3
++	$(INSTALL) -c -m 0644  $(INFO) $(DESTDIR)$(infodir)
+ 
+ uninstall:
+-	$(RM) -f $(BINDIR)/$(TARGET)
+-	$(RM) -f $(INCDIR)/$(HEADER)
+-	$(RM) -f $(LIBDIR)/$(LIBRARY)
+-	$(RM) -f $(MAN1DIR)/$(MAN1)
+-	$(RM) -f $(MAN3DIR)/$(MAN3)
+-	$(RM) -f $(INDODIR)/$(INFO)
++	$(RM) -f $(DESTDIR)$(bindir)/$(TARGET)
++	$(RM) -f $(DESTDIR)$(includedir)/$(HEADER)
++	$(RM) -f $(DESTDIR)$(libdir)/$(LIBRARY)
++	$(RM) -f $(DESTDIR)$(mandir)/man1/$(MAN1)
++	$(RM) -f $(DESTDIR)$(mandir)/$(MAN3)
++	$(RM) -f $(DESTDIR)$(INDODIR)/$(INFO)
+ 
+ #Make clean keeps the compiled documents
+ clean:
