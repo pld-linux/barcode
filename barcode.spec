@@ -60,7 +60,7 @@ stronê manuala do tworzenia programów u¿ywaj±cych GNU barcode.
 %patch0 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
