@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ar.linux.it/pub/barcode/%{name}-%{version}.tar.gz
+# Source0-md5:	7f10c3307b84a19a4ab2fa4b3f2974da
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnu.systemy.it/software/barcode/
 BuildRequires:	autoconf
