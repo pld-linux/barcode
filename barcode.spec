@@ -42,7 +42,7 @@ EAN-8, ISBN, as well as a few other formats. Ouput is generated as
 either Postscript or Encapsulated Postscript (other back-ends may be
 added if needed).
 
-This subpackage contain the C header, the static library and man page
+This subpackage contains the C header, the static library and man page
 for developing programs that use GNU barcode.
 
 %description devel -l pl
