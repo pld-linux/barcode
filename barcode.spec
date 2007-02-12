@@ -1,5 +1,5 @@
 Summary:	GNU barcode
-Summary(pl):	GNU barcode - narzêdzie do kodów paskowych
+Summary(pl.UTF-8):   GNU barcode - narzÄ™dzie do kodÃ³w paskowych
 Name:		barcode
 Version:	0.98
 Release:	4
@@ -22,17 +22,17 @@ EAN-8, ISBN, as well as a few other formats. Output is generated as
 either Postscript or Encapsulated Postscript (other back-ends may be
 added if needed).
 
-%description -l pl
-To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiæ wiêkszo¶æ
-potrzeb zwi±zanych z drukowaniem kodów paskowych na konwencjonalnej
-drukarce. Mo¿e tworzyæ wydruki kodów w standardach: UPC-A, UPC-E,
-EAN-13, EAN-8, ISBN, a tak¿e kilku innych. Dane wyj¶ciowe s±
+%description -l pl.UTF-8
+To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiÄ‡ wiÄ™kszoÅ›Ä‡
+potrzeb zwiÄ…zanych z drukowaniem kodÃ³w paskowych na konwencjonalnej
+drukarce. MoÅ¼e tworzyÄ‡ wydruki kodÃ³w w standardach: UPC-A, UPC-E,
+EAN-13, EAN-8, ISBN, a takÅ¼e kilku innych. Dane wyjÅ›ciowe sÄ…
 generowane w formacie Postscript lub Encapsulated Postscript (w razie
-potrzeby mog± byæ dodane inne backendy).
+potrzeby mogÄ… byÄ‡ dodane inne backendy).
 
 %package devel
 Summary:	GNU barcode files for development
-Summary(pl):	Pliki do programowania z u¿yciem GNU barcode
+Summary(pl.UTF-8):   Pliki do programowania z uÅ¼yciem GNU barcode
 Group:		Development/Libraries
 
 %description devel
@@ -46,16 +46,16 @@ added if needed).
 This subpackage contains the C header, the static library and man page
 for developing programs that use GNU barcode.
 
-%description devel -l pl
-To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiæ wiêkszo¶æ
-potrzeb zwi±zanych z drukowaniem kodów paskowych na konwencjonalnej
-drukarce. Mo¿e tworzyæ wydruki kodów w standardach: UPC-A, UPC-E,
-EAN-13, EAN-8, ISBN, a tak¿e kilku innych. Dane wyj¶ciowe s±
+%description devel -l pl.UTF-8
+To jest GNU-barcode. Ten pakiet ma za zadanie zaspokoiÄ‡ wiÄ™kszoÅ›Ä‡
+potrzeb zwiÄ…zanych z drukowaniem kodÃ³w paskowych na konwencjonalnej
+drukarce. MoÅ¼e tworzyÄ‡ wydruki kodÃ³w w standardach: UPC-A, UPC-E,
+EAN-13, EAN-8, ISBN, a takÅ¼e kilku innych. Dane wyjÅ›ciowe sÄ…
 generowane w formacie Postscript lub Encapsulated Postscript (w razie
-potrzeby mog± byæ dodane inne backendy).
+potrzeby mogÄ… byÄ‡ dodane inne backendy).
 
-Ten podpakiet zawiera plik nag³ówkowy do C, statyczn± bibliotekê oraz
-stronê manuala do tworzenia programów u¿ywaj±cych GNU barcode.
+Ten podpakiet zawiera plik nagÅ‚Ã³wkowy do C, statycznÄ… bibliotekÄ™ oraz
+stronÄ™ manuala do tworzenia programÃ³w uÅ¼ywajÄ…cych GNU barcode.
 
 %prep
 %setup -q
