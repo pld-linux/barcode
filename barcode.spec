@@ -1,5 +1,5 @@
 Summary:	GNU barcode
-Summary(pl.UTF-8):   GNU barcode - narzędzie do kodów paskowych
+Summary(pl.UTF-8):	GNU barcode - narzędzie do kodów paskowych
 Name:		barcode
 Version:	0.98
 Release:	4
@@ -32,7 +32,7 @@ potrzeby mogą być dodane inne backendy).
 
 %package devel
 Summary:	GNU barcode files for development
-Summary(pl.UTF-8):   Pliki do programowania z użyciem GNU barcode
+Summary(pl.UTF-8):	Pliki do programowania z użyciem GNU barcode
 Group:		Development/Libraries
 
 %description devel
