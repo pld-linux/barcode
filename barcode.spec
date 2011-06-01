@@ -5,10 +5,10 @@ Version:	0.98
 Release:	4
 License:	GPL
 Group:		Applications/Graphics
-Source0:	ftp://ar.linux.it/pub/barcode/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/barcode/%{name}-%{version}.tar.gz
 # Source0-md5:	7f10c3307b84a19a4ab2fa4b3f2974da
 Patch0:		%{name}-DESTDIR.patch
-URL:		http://gnu.systemy.it/software/barcode/
+URL:		http://www.gnu.org/software/barcode/
 BuildRequires:	autoconf
 BuildRequires:	automake
 Conflicts:	xscreensaver <= 1:4.16-2
@@ -91,6 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*
-%{_libdir}/lib*.a
-%{_mandir}/man3/*
+%{_includedir}/barcode.h
+%{_libdir}/libbarcode.a
+%{_mandir}/man3/barcode.3*
