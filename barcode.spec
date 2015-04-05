@@ -2,12 +2,13 @@ Summary:	GNU barcode
 Summary(pl.UTF-8):	GNU barcode - narzędzie do kodów paskowych
 Name:		barcode
 Version:	0.98
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Graphics
 Source0:	http://ftp.gnu.org/gnu/barcode/%{name}-%{version}.tar.gz
 # Source0-md5:	7f10c3307b84a19a4ab2fa4b3f2974da
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		format-security.patch
 URL:		http://www.gnu.org/software/barcode/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -60,6 +61,7 @@ stronę manuala do tworzenia programów używających GNU barcode.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
