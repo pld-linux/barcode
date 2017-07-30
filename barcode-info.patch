@@ -1,0 +1,13 @@
+--- barcode-0.99/doc/barcode.texi.orig	2013-03-29 22:51:08.000000000 +0100
++++ barcode-0.99/doc/barcode.texi	2017-07-30 18:09:34.589683489 +0200
+@@ -31,6 +31,10 @@
+ @finalout
+ 
+ @ifinfo
++@dircategory Miscellaneous:
++@direntry
++* Barcode (barcode).			Barcode tools
++@end direntry
+ 
+ This file is the User's Manual for the barcode library (version
+ @value{version}).

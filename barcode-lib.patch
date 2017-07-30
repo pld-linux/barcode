@@ -1,0 +1,115 @@
+--- barcode-0.99/Makefile.am.orig	2013-03-29 22:51:07.000000000 +0100
++++ barcode-0.99/Makefile.am	2017-07-30 18:34:30.092999746 +0200
+@@ -21,11 +21,13 @@
+ 
+ AM_LDFLAGS = -L. @LIBPAPER@
+ 
+-EXTRA_DIST = barcode.h cmdline.h
++EXTRA_DIST = cmdline.h
++include_HEADERS = barcode.h
+ 
+-bin_PROGRAMS = barcode sample
++bin_PROGRAMS = barcode
++noinst_PROGRAMS = sample
+ 
+-noinst_LTLIBRARIES = libbarcode.la
++lib_LTLIBRARIES = libbarcode.la
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 
+--- barcode-0.99/barcode_priv.h.orig	1970-01-01 01:00:00.000000000 +0100
++++ barcode-0.99/barcode_priv.h	2017-07-30 18:54:10.829652931 +0200
+@@ -0,0 +1,12 @@
++#ifndef _BARCODE_PRIV_H_
++#define _BARCODE_PRIV_H_
++
++#include "config.h"
++#include "barcode.h"
++
++#include <gettext.h>
++
++#define _(X) gettext (X)
++#define _N(X) (X)
++
++#endif
+--- barcode-0.99/barcode.h.orig	2013-03-29 22:51:07.000000000 +0100
++++ barcode-0.99/barcode.h	2017-07-30 18:54:10.812986267 +0200
+@@ -23,13 +23,10 @@
+ #ifndef _BARCODE_H_
+ #define _BARCODE_H_
+ 
+-#include "config.h"
+ #include <stdio.h>
+ 
+-#include <gettext.h>
+-
+-#define _(X) gettext (X)
+-#define _N(X) (X)
++#define BARCODE_VERSION     "0.99"
++#define BARCODE_VERSION_INT   9900
+ 
+ /*
+  * The object
+--- barcode-0.99/library.c.orig	2013-03-29 23:23:18.000000000 +0100
++++ barcode-0.99/library.c	2017-07-30 18:54:37.596319295 +0200
+@@ -19,7 +19,7 @@
+  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#include "barcode.h"
++#include "barcode_priv.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+--- barcode-0.99/main.c.orig	2013-03-29 23:22:24.000000000 +0100
++++ barcode-0.99/main.c	2017-07-30 19:05:37.969645087 +0200
+@@ -20,7 +20,7 @@
+  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 	
+-#include "barcode.h"
++#include "barcode_priv.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- barcode-0.99/pcl.c.orig	2013-03-29 23:23:31.000000000 +0100
++++ barcode-0.99/pcl.c	2017-07-30 19:37:17.896290059 +0200
+@@ -19,7 +19,7 @@
+  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#include "barcode.h"
++#include "barcode_priv.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+--- barcode-0.99/plessey.c.orig	2017-07-30 19:29:55.792961773 +0200
++++ barcode-0.99/plessey.c	2017-07-30 19:37:32.916289887 +0200
+@@ -17,7 +17,7 @@
+  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#include "barcode.h"
++#include "barcode_priv.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+--- barcode-0.99/cmdline.c.orig	2013-03-29 23:22:31.000000000 +0100
++++ barcode-0.99/cmdline.c	2017-07-30 19:39:21.519621980 +0200
+@@ -22,7 +22,7 @@
+  *      Michele Comitini (mcm@glisco.it): better handling of numeric type args.
+  */
+ 
+-#include "barcode.h"
++#include "barcode_priv.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- barcode-0.99/sample.c.orig	2013-03-29 23:23:50.000000000 +0100
++++ barcode-0.99/sample.c	2017-07-30 20:36:21.412916266 +0200
+@@ -1,4 +1,4 @@
+-#include "barcode.h"
++#include "barcode_priv.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
